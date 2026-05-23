@@ -43,16 +43,19 @@ const founders = [
     name: "Kin",
     role: "Long-term business development, ecosystem building, and future AI opportunities.",
     url: "https://www.linkedin.com/in/kinfams341534/",
+    image: "/founders/kin.jpg",
   },
   {
     name: "Jay",
     role: "Operations, business strategy, and practical implementation of AI systems.",
     url: "https://www.linkedin.com/in/jay-koh/",
+    image: "/founders/jay.jpg",
   },
   {
     name: "AC",
     role: "Technology adoption, AI solutions, and helping businesses transition into AI usage.",
     url: "https://www.linkedin.com/in/aloycwl/",
+    image: "/founders/ac.jpg",
   },
 ];
 
@@ -109,7 +112,7 @@ export default function Home() {
     <main>
       <nav className="nav">
         <a href="#home" className="brand" aria-label="AIMS home">
-          <img src="/aims-logo-cropped.png" alt="AIMS logo" />
+          <img src="/aims-logo-transparent.png" alt="AIMS logo" />
         </a>
         <div className="navLinks">
           <a href="#services">Services</a>
@@ -147,6 +150,9 @@ export default function Home() {
               <span />
               <strong>AIMS Operating Layer</strong>
             </div>
+            <div className="panelImage">
+              <img src="/visuals/ai-interface.jpg" alt="AIMS interface visualization" />
+            </div>
             <div className="signalGrid">
               {services.map(([title, text], index) => (
                 <article key={title} className="signalCard" style={{ "--i": index } as React.CSSProperties}>
@@ -176,6 +182,9 @@ export default function Home() {
           </p>
           <div className="benefitGrid">
             {benefits.map((item) => <span key={item}>{item}</span>)}
+          </div>
+          <div className="insightImageCard">
+            <img src="/visuals/ai-operations.jpg" alt="AIMS operations visualization" />
           </div>
         </div>
       </section>
@@ -212,7 +221,7 @@ export default function Home() {
         <div className="founderGrid">
           {founders.map((founder, index) => (
             <a className="founderCard reveal" style={{ "--i": index } as React.CSSProperties} key={founder.name} href={founder.url} target="_blank" rel="noreferrer">
-              <div className="avatar">{founder.name.slice(0, 1)}</div>
+              <div className="avatar"><img src={founder.image} alt={`${founder.name} profile`} /></div>
               <h3>{founder.name}</h3>
               <p>{founder.role}</p>
               <span>View LinkedIn →</span>
@@ -227,6 +236,14 @@ export default function Home() {
           <h2>Practical AI Systems For Real-World Operations</h2>
         </div>
         <div className="serviceGrid">
+          <div className="serviceImageCard">
+            <img src="/visuals/ai-meeting.jpg" alt="AI meeting visualization" />
+            <div className="serviceImageOverlay">
+              <span>Implementation Layer</span>
+              <h3>From AI ideas to operational systems</h3>
+              <p>We turn scattered AI tools into guided workflows, agents, and automation that teams can actually use.</p>
+            </div>
+          </div>
           {detailedServices.map((service, index) => (
             <article className="serviceCard reveal" style={{ "--i": index } as React.CSSProperties} key={service.title}>
               <div className="serviceNumber">{String(index + 1).padStart(2, "0")}</div>
@@ -263,6 +280,9 @@ export default function Home() {
           </p>
           <div className="futureList">
             {future.map((item) => <span key={item}>{item}</span>)}
+          </div>
+          <div className="futureVisual">
+            <img src="/visuals/ai-datacenter.jpg" alt="Future AI ecosystem visualization" />
           </div>
         </div>
       </section>
@@ -314,7 +334,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <img src="/aims-logo-cropped.png" alt="AIMS logo" />
+        <img src="/aims-logo-transparent.png" alt="AIMS logo" />
         <p>© {new Date().getFullYear()} AIMS — A.I. Management Services. All rights reserved.</p>
       </footer>
     </main>
