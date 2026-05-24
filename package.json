@@ -10,12 +10,13 @@
   },
   "dependencies": {
     "@types/node": "latest",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "next": "latest",
+    "nodemailer": "^8.0.8",
     "react": "latest",
     "react-dom": "latest",
     "typescript": "latest"
-  },
-  "devDependencies": {}
+  }
 }

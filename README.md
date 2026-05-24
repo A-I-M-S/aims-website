@@ -1,6 +1,6 @@
 # AIMS Website
 
-Futuristic public website for A.I. Management Services, built with Next.js and a Resend-powered contact form.
+Futuristic public website for A.I. Management Services, built with Next.js and a Brevo-powered contact form.
 
 ## Local development
 
@@ -13,8 +13,11 @@ npm run dev
 
 Set these in Vercel before deploying the contact form:
 
-- `RESEND_API_KEY` — Resend API key
+- `BREVO_SMTP_HOST` — Brevo SMTP server, usually `smtp-relay.brevo.com`
+- `BREVO_SMTP_PORT` — Brevo SMTP port, usually `587`
+- `BREVO_SMTP_USER` — Brevo SMTP login
+- `BREVO_SMTP_KEY` — Brevo SMTP key
 - `CONTACT_TO` — inbox that receives website enquiries, e.g. `enquiries@aims-sg.com`
-- `CONTACT_FROM` — sender identity, e.g. `AIMS Website <hello@yourdomain.com>` after verifying your domain in Resend. Until then, use `AIMS Website <onboarding@resend.dev>`.
+- `CONTACT_FROM` — sender identity, e.g. `AIMS Website <no-reply@aims-sg.com>`
 
-The API key is intentionally not committed to GitHub.
+SMTP keys are intentionally not committed to GitHub.
