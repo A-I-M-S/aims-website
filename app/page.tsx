@@ -368,6 +368,9 @@ export default function Home() {
           </p>
           <div className="contactLinks" aria-label="AIMS contact links">
             <a href="mailto:enquiries@aims-sg.com" className="contactLink">enquiries@aims-sg.com</a>
+            <a href="https://maps.google.com/?q=29%20Carpenter%20St%20Singapore%20059923" className="contactLink" target="_blank" rel="noreferrer">
+              29 Carpenter St, Singapore 059923
+            </a>
             <a href="https://www.facebook.com/profile.php?id=61589876739695" className="contactIconLink" target="_blank" rel="noreferrer" aria-label="AIMS on Facebook">
               <FacebookIcon />
               <span>Facebook</span>
