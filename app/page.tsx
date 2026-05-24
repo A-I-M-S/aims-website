@@ -78,6 +78,53 @@ const benefits = [
   "Work smarter",
 ];
 
+const useCases = [
+  {
+    title: "Marketing Team Upgrade",
+    outcome: "Turn one marketer into a full content engine",
+    text: "Plan campaigns, generate content angles, draft captions, repurpose long-form material, and build follow-up sequences without adding more tools or headcount.",
+    metric: "More output, less agency dependency",
+  },
+  {
+    title: "One-Man-Operation Business",
+    outcome: "Run lean without looking small",
+    text: "Set up AI agents for enquiries, admin, content, research, proposals, and customer follow-ups so founders can operate with the leverage of a larger team.",
+    metric: "Founder-led OMO systems",
+  },
+  {
+    title: "Staff Replacement Support",
+    outcome: "Reduce repetitive manpower needs",
+    text: "Automate repeatable tasks like first-level customer replies, data entry, report drafting, appointment reminders, FAQ handling, and document preparation.",
+    metric: "Replace hours, not judgement",
+  },
+  {
+    title: "Less Licensing Headache",
+    outcome: "Simplify the AI tool stack",
+    text: "Choose the right AI tools, remove overlapping subscriptions, create standard workflows, and train teams to use fewer platforms with better results.",
+    metric: "Cleaner stack, lower waste",
+  },
+  {
+    title: "Sales & Enquiry Assistant",
+    outcome: "Never let warm leads go cold",
+    text: "Create AI-assisted scripts, lead qualification flows, reply templates, proposal drafts, and follow-up reminders that keep prospects moving.",
+    metric: "Faster response cycles",
+  },
+  {
+    title: "Management Operating System",
+    outcome: "Make daily operations easier to control",
+    text: "Build dashboards, SOP assistants, meeting summaries, task trackers, and internal knowledge systems so the business runs with clearer visibility.",
+    metric: "Better control with fewer meetings",
+  },
+];
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.25 10.44 22v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.77l-.44 2.91h-2.33V22C18.34 21.25 22 17.08 22 12.06Z" />
+    </svg>
+  );
+}
+
 export default function Home() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState("");
@@ -116,6 +163,7 @@ export default function Home() {
         </a>
         <div className="navLinks">
           <a href="#services">Services</a>
+          <a href="#use-cases">Use Cases</a>
           <a href="#about">About</a>
           <a href="#founders">Founders</a>
           <a href="#contact" className="navCta">Contact</a>
@@ -270,6 +318,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="use-cases" className="section useCaseSection">
+        <div className="sectionIntro centered reveal">
+          <p className="eyebrow">Use Cases</p>
+          <h2>What AIMS Can Turn AI Into For Your Business</h2>
+          <p>
+            We do not sell AI hype. We design practical operating systems that help small teams produce more,
+            reduce repetitive work, and run with the leverage of a much larger company.
+          </p>
+        </div>
+        <div className="useCaseGrid">
+          {useCases.map((useCase, index) => (
+            <article className="useCaseCard reveal" style={{ "--i": index } as React.CSSProperties} key={useCase.title}>
+              <div className="useCaseTopline">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{useCase.metric}</strong>
+              </div>
+              <h3>{useCase.title}</h3>
+              <h4>{useCase.outcome}</h4>
+              <p>{useCase.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section futureSection">
         <div className="futurePanel reveal">
           <p className="eyebrow">Future Direction</p>
@@ -294,6 +366,13 @@ export default function Home() {
           <p>
             Whether you are exploring AI for your business, your career, or your future opportunities, AIMS is here to help.
           </p>
+          <div className="contactLinks" aria-label="AIMS contact links">
+            <a href="mailto:enquiries@aims-sg.com" className="contactLink">enquiries@aims-sg.com</a>
+            <a href="https://www.facebook.com/profile.php?id=61589876739695" className="contactIconLink" target="_blank" rel="noreferrer" aria-label="AIMS on Facebook">
+              <FacebookIcon />
+              <span>Facebook</span>
+            </a>
+          </div>
           <p className="tagline">AIMS — Helping Businesses and Individuals Use AI With Confidence.</p>
         </div>
 

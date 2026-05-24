@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const to = process.env.CONTACT_TO || "aloycwl@gmail.com";
+    const to = process.env.CONTACT_TO || "enquiries@aims-sg.com";
     const from = process.env.CONTACT_FROM || "AIMS Website <onboarding@resend.dev>";
 
     if (!apiKey) {
