@@ -159,7 +159,7 @@ export default function Home() {
     <main>
       <nav className="nav">
         <a href="#home" className="brand" aria-label="AIMS home">
-          <img src="/aims-logo-transparent.png" alt="AIMS logo" />
+          <img src="/aims-logo-white.png" alt="AIMS logo" />
         </a>
         <div className="navLinks">
           <a href="#services">Services</a>
@@ -416,7 +416,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <img src="/aims-logo-transparent.png" alt="AIMS logo" />
+        <img src="/aims-logo-white.png" alt="AIMS logo" />
         <p>© {new Date().getFullYear()} AIMS — A.I. Management Services. All rights reserved.</p>
       </footer>
     </main>
