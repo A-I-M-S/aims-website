@@ -1,6 +1,19 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
+
+// Contact channels — fill these in to enable the matching CTA buttons.
+// WhatsApp/phone buttons are hidden automatically while these are empty.
+const WHATSAPP_NUMBER = ""; // e.g. "6591234567" (country code, no + or spaces)
+const PHONE_NUMBER = ""; // e.g. "+65 9123 4567"
+const BOOKING_URL = ""; // optional Calendly/booking link, e.g. "https://calendly.com/aims/intro"
+const CONTACT_EMAIL = "enquiries@aims-sg.com";
+
+const whatsappLink = WHATSAPP_NUMBER
+  ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      "Hi AIMS, I'd like to book a free AI business consultation."
+    )}`
+  : "";
 
 const services = [
   ["AI Consultation", "Helping clients understand and choose the right AI tools and strategies."],
@@ -125,9 +138,134 @@ function FacebookIcon() {
   );
 }
 
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 0 0 1.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+    </svg>
+  );
+}
+
+function CalendarIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M7 2v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 7v10H5V9h14zM5 6h14v1H5V6z" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm17.4 2H3.6l8.4 5.25L20.4 7zM4 9.24V17h16V9.24l-7.47 4.67a1 1 0 0 1-1.06 0L4 9.24z" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M18.3 5.71 12 12.01l-6.3-6.3-1.4 1.41 6.29 6.3-6.3 6.29 1.41 1.41 6.3-6.3 6.29 6.3 1.41-1.41-6.3-6.3 6.3-6.29z" />
+    </svg>
+  );
+}
+
+function ConsultChannels({ onScrollToForm }: { onScrollToForm: () => void }) {
+  return (
+    <div className="ctaChannels">
+      {BOOKING_URL ? (
+        <a className="ctaChannel ctaChannelPrimary" href={BOOKING_URL} target="_blank" rel="noreferrer">
+          <CalendarIcon />
+          <span>Book a Time</span>
+        </a>
+      ) : (
+        <button type="button" className="ctaChannel ctaChannelPrimary" onClick={onScrollToForm}>
+          <CalendarIcon />
+          <span>Book a Time</span>
+        </button>
+      )}
+      {whatsappLink && (
+        <a className="ctaChannel" href={whatsappLink} target="_blank" rel="noreferrer">
+          <WhatsAppIcon />
+          <span>WhatsApp Us</span>
+        </a>
+      )}
+      <a className="ctaChannel" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Free AI Business Consultation")}`}>
+        <MailIcon />
+        <span>Email Us</span>
+      </a>
+    </div>
+  );
+}
+
+function ConsultModal({ open, onClose, onScrollToForm }: { open: boolean; onClose: () => void; onScrollToForm: () => void }) {
+  if (!open) return null;
+  return (
+    <div className="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="consultTitle" onClick={onClose}>
+      <div className="modalCard" onClick={(e) => e.stopPropagation()}>
+        <button type="button" className="modalClose" aria-label="Close" onClick={onClose}>
+          <CloseIcon />
+        </button>
+        <p className="eyebrow">Free Consultation · No Obligation</p>
+        <h2 id="consultTitle">Get a Free AI Transformation Audit</h2>
+        <p className="modalLead">
+          In a focused 30-minute session, we map what your business already has, then show you exactly
+          where AI agents, automation, and better structure can save time and unlock growth.
+        </p>
+        <ul className="modalList">
+          <li>A clear picture of your AI-readiness and quick wins</li>
+          <li>Which workflows to agentise first — and what to leave alone</li>
+          <li>A simple, practical transformation roadmap to keep</li>
+        </ul>
+        <ConsultChannels
+          onScrollToForm={() => {
+            onClose();
+            onScrollToForm();
+          }}
+        />
+        <p className="modalFine">100% free. No pressure, no sales pitch — just a clear next step.</p>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    const KEY = "aims_consult_dismissed";
+    const dismissedAt = Number(localStorage.getItem(KEY) || 0);
+    const THREE_DAYS = 3 * 24 * 60 * 60 * 1000;
+    if (Date.now() - dismissedAt > THREE_DAYS) {
+      const timer = setTimeout(() => setModalOpen(true), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") closeModal();
+    }
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", onKey);
+    }
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [modalOpen]);
+
+  function closeModal() {
+    setModalOpen(false);
+    localStorage.setItem("aims_consult_dismissed", String(Date.now()));
+  }
+
+  function scrollToForm() {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  }
 
   async function submitContact(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -157,6 +295,11 @@ export default function Home() {
 
   return (
     <main>
+      <ConsultModal open={modalOpen} onClose={closeModal} onScrollToForm={scrollToForm} />
+      <button type="button" className="floatingCta" onClick={() => setModalOpen(true)} aria-label="Book a free AI consultation">
+        <CalendarIcon />
+        <span>Free Consultation</span>
+      </button>
       <nav className="nav">
         <a href="#home" className="brand" aria-label="AIMS home">
           <img src="/aims-logo-white.png" alt="AIMS logo" />
@@ -186,9 +329,10 @@ export default function Home() {
               and create practical AI strategies without needing to become technology experts themselves.
             </p>
             <div className="heroActions">
-              <a className="primaryButton" href="#contact">Start Your AI Journey</a>
+              <button type="button" className="primaryButton" onClick={() => setModalOpen(true)}>Book a Free AI Consultation</button>
               <a className="secondaryButton" href="#services">Explore Services</a>
             </div>
+            <p className="heroReassure">Free 30-minute session · No obligation · Get a practical AI roadmap</p>
           </div>
 
           <div className="commandPanel reveal delayOne" aria-label="AIMS capability panel">
@@ -359,6 +503,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section ctaBandSection">
+        <div className="ctaBand reveal">
+          <p className="eyebrow">Free Business Consultation</p>
+          <h2>Let&rsquo;s Find Your Fastest Path To AI</h2>
+          <p>
+            Book a free, no-obligation session. We look at what your business already has, identify what
+            can be agentised and automated, and hand you a clear plan to transform and structure it &mdash;
+            whether you move forward with us or not.
+          </p>
+          <ConsultChannels onScrollToForm={scrollToForm} />
+        </div>
+      </section>
+
       <section id="contact" className="section contactSection">
         <div className="contactCopy reveal">
           <p className="eyebrow">Contact Us</p>
@@ -394,7 +551,8 @@ export default function Home() {
           </label>
           <label>
             What do you need help with?
-            <select name="interest" defaultValue="AI Consultation">
+            <select name="interest" defaultValue="Free Business Consultation">
+              <option>Free Business Consultation</option>
               <option>AI Consultation</option>
               <option>AI Setup & Integration</option>
               <option>AI Agent Solutions</option>
