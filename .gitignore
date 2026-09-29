@@ -5,3 +5,5 @@ out
 .env
 .vercel
 .DS_Store
+*.tsbuildinfo
+.playwright-cli

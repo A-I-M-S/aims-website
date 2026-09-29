@@ -2,11 +2,16 @@
   "name": "aims-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --experimental-strip-types --test --test-isolation=none tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22.18.0"
   },
   "dependencies": {
     "@types/node": "latest",
