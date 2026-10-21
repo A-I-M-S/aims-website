@@ -9,7 +9,7 @@ export type Agent = {
   name: string;
   category: AgentCategory;
   icon: string;
-  colour: "teal" | "coral" | "yellow" | "violet";
+  colour: "blue" | "coral" | "yellow" | "violet";
   tagline: string;
   description: string;
   tasks: string[];
@@ -27,7 +27,7 @@ export const agents: Agent[] = [
     name: "Admin agent",
     category: "Operations",
     icon: "calendar",
-    colour: "teal",
+    colour: "blue",
     tagline: "A little less admin. A lot more headspace.",
     description:
       "Turn a busy inbox into organised requests, prepared replies, and coordinated calendars. An admin agent connects the small tasks that keep your business moving.",
@@ -230,7 +230,7 @@ export const agents: Agent[] = [
     name: "Project manager agent",
     category: "Operations",
     icon: "board",
-    colour: "teal",
+    colour: "blue",
     tagline: "Keep the moving parts moving together.",
     description:
       "Connect meeting notes, delivery boards, and project updates. Help project managers see blockers, prepare status reports, and follow up on actions without chasing every system.",
@@ -414,7 +414,7 @@ export const agents: Agent[] = [
     name: "Customer support agent",
     category: "Customer growth",
     icon: "chat",
-    colour: "teal",
+    colour: "blue",
     tagline: "Helpful answers. A smoother handover.",
     description:
       "Connect customer questions to approved product knowledge and live order information. Handle routine requests within clear permissions and hand over complex cases with context.",

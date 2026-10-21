@@ -3,7 +3,7 @@ export type Platform = {
   name: string;
   mark: string;
   category: "Workflow automation" | "Microsoft AI" | "Agent building";
-  colour: "teal" | "coral" | "yellow" | "violet";
+  colour: "blue" | "coral" | "yellow" | "violet";
   description: string;
   example: string;
   bestFor: string;
@@ -55,7 +55,7 @@ export const platforms: Platform[] = [
     name: "Power Automate",
     mark: "PA",
     category: "Workflow automation",
-    colour: "teal",
+    colour: "blue",
     description:
       "Automate cloud and desktop processes with Microsoft connectors, approvals, and supported AI capabilities.",
     example:
@@ -94,7 +94,7 @@ export const platforms: Platform[] = [
     name: "Dify",
     mark: "D",
     category: "Agent building",
-    colour: "teal",
+    colour: "blue",
     description:
       "Build knowledge-connected AI applications and workflows with configurable models and integrations.",
     example:
