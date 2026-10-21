@@ -8,6 +8,8 @@ import {
 } from "../../components/sections";
 import { BreadcrumbSchema } from "../../components/json-ld";
 import { pageMetadata } from "../../lib/site";
+import { AgentCard } from "../../components/agent-card";
+import { agents } from "../../lib/agents";
 
 export const metadata = pageMetadata(
   "AI Solutions for Business, Support & Engineering",
@@ -38,6 +40,30 @@ export default function SolutionsPage() {
       <section className="container solutions-page-explorer">
         <h2 className="sr-only">AI workflows in practice</h2>
         <SolutionExplorer />
+      </section>
+      <section className="section container">
+        <SectionHeading
+          eyebrow="A TEAMMATE FOR YOUR KIND OF WORK"
+          title="Start with a role. Find a possibility."
+          text="Explore sample agents for everyday business responsibilities, each with practical tasks, connected tools, and a clear human review point."
+        >
+          <Link href="/agents" className="text-link">
+            All sample agents <Icon name="arrow" />
+          </Link>
+        </SectionHeading>
+        <div className="agent-grid">
+          {agents
+            .filter((agent) =>
+              [
+                "project-manager-agent",
+                "accounts-agent",
+                "support-agent",
+              ].includes(agent.slug),
+            )
+            .map((agent) => (
+              <AgentCard agent={agent} key={agent.slug} />
+            ))}
+        </div>
       </section>
       <section className="section container">
         <SectionHeading

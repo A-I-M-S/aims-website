@@ -2,23 +2,32 @@ import { ContactForm } from "../../components/contact-form";
 import { Breadcrumbs } from "../../components/sections";
 import { BreadcrumbSchema } from "../../components/json-ld";
 import { Icon } from "../../components/icon";
-import { services, getService } from "../../lib/services";
+import { services } from "../../lib/services";
+import { agents } from "../../lib/agents";
+import { hardware } from "../../lib/hardware";
+import { getEnquiryContext } from "../../lib/enquiry";
 import { CONTACT_EMAIL, pageMetadata } from "../../lib/site";
 
 export const metadata = pageMetadata(
-  "Discuss Your AI Project",
-  "Talk to AIMS about AI automation, agent engineering, infrastructure, and model access. Share your goals with our Singapore-based team to scope the next step.",
+  "Discuss an AI Project or Request a GPU Quote",
+  "Talk to AIMS Singapore about AI agents, workflow automation, Microsoft Copilot, NVIDIA hardware, and local inference. Share your goals and request a quote.",
   "/contact",
 );
 
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ service?: string | string[] }>;
+  searchParams: Promise<{
+    service?: string | string[];
+    agent?: string | string[];
+    hardware?: string | string[];
+  }>;
 }) {
-  const selected = (await searchParams).service;
-  const service =
-    typeof selected === "string" ? getService(selected) : undefined;
+  const context = getEnquiryContext(await searchParams, {
+    services,
+    agents,
+    hardware,
+  });
   return (
     <>
       <section className="container contact-page">
@@ -30,15 +39,16 @@ export default async function ContactPage({
               The next step is a conversation
             </p>
             <h1>
-              Big idea?
+              A big idea.
               <br />
-              Everyday challenge?
+              A little possibility.
               <br />
-              <span className="accent">Let’s build.</span>
+              <span className="accent">Let’s talk.</span>
             </h1>
             <p className="page-lead">
-              Tell us what you want to make possible. We’ll explore the right
-              approach, the practical constraints, and a clear next step.
+              An agent for your team, a workflow that could work better, or
+              hardware for your next AI deployment. Tell us what you have in
+              mind.
             </p>
             <div className="contact-details">
               <a href={`mailto:${CONTACT_EMAIL}`}>
@@ -77,8 +87,13 @@ export default async function ContactPage({
             </div>
           </div>
           <ContactForm
-            interests={services.map((item) => item.shortTitle)}
-            initialInterest={service?.shortTitle}
+            key={`${context.interest}:${context.message}`}
+            interests={[
+              ...services.map((item) => item.shortTitle),
+              ...agents.map((agent) => `${agent.name} development`),
+            ]}
+            initialInterest={context.interest}
+            initialMessage={context.message}
           />
         </div>
       </section>

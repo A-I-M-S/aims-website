@@ -5,8 +5,8 @@ import { insights } from "../../lib/insights";
 import { pageMetadata } from "../../lib/site";
 
 export const metadata = pageMetadata(
-  "Practical AI Engineering Insights",
-  "Practical guides to RAG, model fine-tuning, MCP integration, and LLM caching. Understand the engineering decisions behind useful business AI with AIMS.",
+  "AI Agents, Automation & Hardware Guides",
+  "Practical guides to your first AI agent, local GPU hardware, RAG, MCP integration, and model operations. Make informed AI decisions with AIMS Singapore.",
   "/insights",
 );
 

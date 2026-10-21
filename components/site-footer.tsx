@@ -14,7 +14,7 @@ export function SiteFooter() {
         <div className="footer-brand">
           <Link href="/" aria-label="AIMS home">
             <img
-              src="/aims-logo-white.png"
+              src="/aims-logo-transparent.png"
               alt="AIMS"
               width="151"
               height="42"
@@ -22,16 +22,17 @@ export function SiteFooter() {
             />
           </Link>
           <p>
-            Intelligence, engineered
-            <br />
-            for the real world.
+            A little AI.
+            <br />A world of possibility.
           </p>
           <span className="location">
             <span className="status-dot" /> Singapore · Working globally
           </span>
         </div>
         <div>
-          <p className="footer-label">Capabilities</p>
+          <p className="footer-label">Build with AIMS</p>
+          <Link href="/agents">Sample AI agents</Link>
+          <Link href="/hardware">Hardware & private AI</Link>
           {servicesForFooter.map((service) => (
             <Link key={service.slug} href={`/services/${service.slug}`}>
               {service.shortTitle}
@@ -44,6 +45,7 @@ export function SiteFooter() {
         <div>
           <p className="footer-label">Explore</p>
           <Link href="/solutions">Business solutions</Link>
+          <Link href="/platforms">Tools & platforms</Link>
           <Link href="/#approach">Our approach</Link>
           <Link href="/services/frontier-model-access">Model access</Link>
           <Link href="/insights">Insights</Link>

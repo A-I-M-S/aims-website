@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { IntelligenceVisual } from "../components/intelligence-visual";
+import { AgentWorkflow } from "../components/agent-workflow";
+import { AgentCard } from "../components/agent-card";
 import { Icon } from "../components/icon";
 import { SolutionExplorer } from "../components/solution-explorer";
 import {
@@ -9,344 +10,438 @@ import {
   SectionHeading,
 } from "../components/sections";
 import { InsightCard } from "../components/insight-card";
-import { services } from "../lib/services";
+import { agents } from "../lib/agents";
 import { insights } from "../lib/insights";
 import { homeFaqs } from "../lib/site";
 
-const groups = [
+const paths = [
   {
-    category: "Automation",
     number: "01",
-    title: (
-      <>
-        Make work
-        <br />
-        flow better.
-      </>
-    ),
-    text: "Connect your people, processes, and applications. Put the repetitive work on a better path.",
+    colour: "teal",
     icon: "workflow",
-    range: "01—03",
+    label: "AI & AUTOMATION",
+    title: "Make the everyday extraordinary.",
+    description:
+      "Connect your tools, clear the repetitive work, and give your team time to move forward.",
+    links: [
+      { label: "Workflow automation", href: "/services/workflow-automation" },
+      {
+        label: "Microsoft Copilot & agents",
+        href: "/services/microsoft-copilot",
+      },
+      {
+        label: "AI strategy & team adoption",
+        href: "/services/ai-transformation-strategy",
+      },
+    ],
   },
   {
-    category: "AI engineering",
     number: "02",
-    title: (
-      <>
-        Build intelligence
-        <br />
-        into your business.
-      </>
-    ),
-    text: "Create agents and knowledge systems designed around the way your organisation works.",
+    colour: "coral",
     icon: "agent",
-    range: "04—07",
+    label: "YOUR AGENTIC TEAM",
+    title: "Good people. Great AI teammates.",
+    description:
+      "Purpose-built agents for the roles and responsibilities that make your business yours.",
+    links: [
+      { label: "Explore sample agents", href: "/agents" },
+      { label: "Custom agents & copilots", href: "/services/ai-copilots" },
+      {
+        label: "Knowledge, RAG & integrations",
+        href: "/services/rag-model-fine-tuning",
+      },
+    ],
   },
   {
-    category: "Infrastructure",
     number: "03",
-    title: (
-      <>
-        Run AI on
-        <br />
-        your terms.
-      </>
-    ),
-    text: "Take control of model access, inference, performance, and the cost of operating at scale.",
+    colour: "yellow",
     icon: "server",
-    range: "08—10",
+    label: "HARDWARE & PRIVATE AI",
+    title: "Big intelligence. On your terms.",
+    description:
+      "From a local AI workstation to enterprise GPU systems. Source it, install it, put it to work.",
+    links: [
+      { label: "NVIDIA hardware catalogue", href: "/hardware" },
+      {
+        label: "Local inference & monitoring",
+        href: "/services/private-ai-inference",
+      },
+      {
+        label: "Data & cloud foundations",
+        href: "/services/data-cloud-foundations",
+      },
+    ],
   },
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="hero" id="home" aria-labelledby="hero-heading">
-        <div className="hero-grid-background" aria-hidden="true" />
-        <div className="container hero-grid">
-          <div className="hero-copy">
-            <p className="eyebrow">
+      <section className="transformation-hero" aria-labelledby="hero-heading">
+        <div className="container transformation-hero-grid">
+          <div className="transformation-hero-copy">
+            <p className="hero-pill">
               <span className="status-dot" />
-              AI ENGINEERING & INFRASTRUCTURE
+              AGENTIC TRANSFORMATION, MADE HUMAN
             </p>
             <h1 id="hero-heading">
-              Intelligence.
+              Put AI to work.
               <br />
-              Engineered
+              Make room for
               <br />
-              <span>for impact.</span>
+              <span className="hero-highlight">
+                what’s next.
+                <svg
+                  viewBox="0 0 400 18"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path d="M4 13Q180-3 396 9" />
+                </svg>
+              </span>
             </h1>
             <p className="hero-description">
-              We build the agents, automation, and infrastructure that turn AI
-              into a working part of your business.
+              AI agents, connected workflows, and private AI infrastructure.
+              Built around your business. Designed to give your people more
+              possibility.
             </p>
             <div className="button-row">
-              <Link href="/contact" className="button">
-                Build with AIMS
-                <Icon name="diagonal" />
+              <Link
+                className="button"
+                href="/contact?service=ai-transformation-strategy"
+              >
+                Let’s find your next step <Icon name="diagonal" />
               </Link>
-              <Link href="/services" className="button button-outline">
-                Explore our capabilities
-                <Icon name="arrow" />
+              <Link href="/agents" className="hero-secondary">
+                Meet your AI team <Icon name="arrow" />
               </Link>
             </div>
-            <p className="hero-note">
-              <span />
-              Singapore based. Built for the real world.
-            </p>
+            <div className="hero-location">
+              <Icon name="globe" />
+              <span>Singapore based. Possibilities everywhere.</span>
+            </div>
           </div>
-          <IntelligenceVisual />
+          <AgentWorkflow />
         </div>
-        <div className="container hero-bottom">
-          <span className="mono">
-            FROM THE FIRST WORKFLOW TO THE FULL AI STACK
+        <div className="container hero-promise">
+          <span>
+            <Icon name="check" />
+            Your tools, connected
           </span>
-          <a href="#services" className="scroll-cue">
-            Discover what’s possible <span>↓</span>
+          <span>
+            <Icon name="check" />
+            Your people, in control
+          </span>
+          <span>
+            <Icon name="check" />
+            From idea to everyday impact
+          </span>
+          <a href="#possibilities">
+            Find your possibility <span>↓</span>
           </a>
         </div>
       </section>
-
-      <section className="foundation-strip" aria-label="Technology foundations">
-        <div className="container foundation-inner">
+      <section className="platform-ribbon" aria-label="Platforms we build with">
+        <div className="container platform-ribbon-inner">
           <p>
-            Open standards.
+            Familiar tools.
             <br />
-            <strong>Connected possibilities.</strong>
+            <strong>Fresh possibilities.</strong>
           </p>
           <div>
             {[
-              "APIs & MCP",
-              "Agent orchestration",
-              "Knowledge & RAG",
-              "Model infrastructure",
-            ].map((label, index) => (
-              <span key={label}>
-                <span className="foundation-mark">
-                  {["↗", "⌘", "◈", "⊞"][index]}
+              { name: "Make", className: "make" },
+              { name: "n8n", className: "n8n" },
+              { name: "Zapier", className: "zapier" },
+              { name: "Power Automate", className: "power" },
+              { name: "Copilot Studio", className: "copilot" },
+            ].map((tool) => (
+              <Link
+                href="/platforms"
+                key={tool.name}
+                className={`ribbon-tool ribbon-${tool.className}`}
+              >
+                <span aria-hidden="true">
+                  {tool.name === "Make"
+                    ? "▥"
+                    : tool.name === "Zapier"
+                      ? "✳"
+                      : tool.name === "n8n"
+                        ? "⌘"
+                        : "◈"}
                 </span>
-                {label}
-              </span>
+                {tool.name}
+              </Link>
             ))}
           </div>
         </div>
       </section>
-
-      <section className="section container" id="services">
+      <section className="section container" id="possibilities">
         <SectionHeading
-          eyebrow="Connected capabilities"
+          eyebrow="A connected world of possibilities"
           title={
             <>
-              The whole AI stack.
+              Your next advantage.
               <br />
-              <span className="muted-heading">One engineering partner.</span>
+              <span className="muted-heading">Let’s build it together.</span>
             </>
           }
-          text="From the workflow your team repeats every day to the infrastructure behind your next product. We connect the pieces that make AI useful."
+          text="Start with the work you want to improve. We bring the strategy, software, and hardware together to make it happen."
         >
           <Link href="/services" className="text-link">
-            Explore all 10 capabilities
-            <Icon name="arrow" />
+            Explore all services <Icon name="arrow" />
           </Link>
         </SectionHeading>
-        <div className="capability-groups">
-          {groups.map((group) => (
+        <div className="path-grid">
+          {paths.map((path) => (
             <article
-              className={`capability-group capability-group-${group.number}`}
-              key={group.category}
+              key={path.number}
+              className={`path-card tone-${path.colour}`}
             >
-              <div className="capability-group-top">
-                <span className="mono">
-                  {group.number} / {group.category}
+              <div className="path-card-top">
+                <span className="card-kicker">
+                  {path.number} / {path.label}
                 </span>
-                <Icon name={group.icon} />
+                <span className="path-icon">
+                  <Icon name={path.icon} />
+                </span>
               </div>
-              <h3>{group.title}</h3>
-              <p>{group.text}</p>
-              <div className="capability-links">
-                {services
-                  .filter((service) => service.category === group.category)
-                  .map((service) => (
-                    <Link key={service.slug} href={`/services/${service.slug}`}>
-                      <span className="mono">{service.number}</span>
-                      {service.shortTitle}
-                      <Icon name="diagonal" />
-                    </Link>
-                  ))}
-              </div>
-              <div className="capability-bottom mono">
-                CAPABILITIES {group.range}
-                <span>↗</span>
+              <h3>{path.title}</h3>
+              <p>{path.description}</p>
+              <div className="path-links">
+                {path.links.map((link) => (
+                  <Link href={link.href} key={link.href}>
+                    {link.label}
+                    <Icon name="diagonal" />
+                  </Link>
+                ))}
               </div>
             </article>
           ))}
         </div>
       </section>
-
-      <section className="section solutions-section" id="use-cases">
-        <div className="container">
+      <section className="agent-preview-section">
+        <div className="section container">
           <SectionHeading
-            eyebrow="Intelligence in practice"
+            eyebrow="Meet the helping hands"
             title={
               <>
-                Built around the work.
+                A team full of possibility.
                 <br />
-                <span className="muted-heading">Connected to the outcome.</span>
+                <span className="muted-heading">
+                  Built for your kind of work.
+                </span>
               </>
             }
-            text="See how the right combination of tools, models, and human judgement can move a real business process forward."
+            text="An organised admin. A helpful HR teammate. A creative head start. Explore sample agents we can tailor to your workflows and connect to your tools."
           >
-            <Link href="/solutions" className="text-link">
-              Explore solutions
-              <Icon name="arrow" />
+            <Link href="/agents" className="text-link">
+              Meet all {agents.length} sample agents <Icon name="arrow" />
             </Link>
           </SectionHeading>
-          <SolutionExplorer />
+          <div className="agent-grid">
+            {agents
+              .filter((agent) =>
+                [
+                  "admin-agent",
+                  "hr-agent",
+                  "accounts-agent",
+                  "developer-agent",
+                  "designer-agent",
+                  "videographer-agent",
+                ].includes(agent.slug),
+              )
+              .map((agent) => (
+                <AgentCard agent={agent} key={agent.slug} />
+              ))}
+          </div>
+          <div className="section-footnote">
+            <Icon name="sparkles" />
+            <p>
+              Plus project management, sales, support, procurement, research,
+              and marketing. These are example solutions we can build around
+              your business.
+            </p>
+            <Link href="/agents">
+              Find your agent <span>↗</span>
+            </Link>
+          </div>
         </div>
       </section>
-
-      <section
-        className="principles-strip container"
-        aria-label="Our engineering principles"
-      >
-        {[
-          {
-            icon: "connect",
-            title: "Your stack, connected.",
-            text: "Work with the systems and data you already have.",
-          },
-          {
-            icon: "shield",
-            title: "Control, built in.",
-            text: "Clear permissions, human approvals, and useful visibility.",
-          },
-          {
-            icon: "code",
-            title: "A clear handover.",
-            text: "Documented systems your team can understand and operate.",
-          },
-        ].map((item) => (
-          <div key={item.title}>
-            <Icon name={item.icon} />
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          </div>
-        ))}
+      <section className="section container" id="use-cases">
+        <SectionHeading
+          eyebrow="From a little spark to a working system"
+          title={
+            <>
+              What could a better
+              <br />
+              <span className="muted-heading">workday look like?</span>
+            </>
+          }
+          text="See how agents, automation, and human judgement work together. Every workflow starts with a real business need."
+        >
+          <Link href="/solutions" className="text-link">
+            Explore business solutions <Icon name="arrow" />
+          </Link>
+        </SectionHeading>
+        <SolutionExplorer />
       </section>
-
-      <ProcessSection />
-
-      <section className="model-access-section">
-        <div className="container model-access-grid">
+      <section className="hardware-home-section">
+        <div className="container hardware-home-grid">
           <div>
             <p className="eyebrow">
               <span />
-              Frontier model access
+              YOUR INFRASTRUCTURE. YOUR POSSIBILITIES.
             </p>
             <h2>
-              The right intelligence.
+              Power your AI.
               <br />
-              <span className="accent">The right terms.</span>
+              <span>Keep it close.</span>
             </h2>
             <p>
-              From capable everyday models to frontier reasoning. Find an access
-              arrangement that fits your applications, expected usage, and
-              operating requirements.
+              Bring AI to your own environment. We source NVIDIA GPUs and
+              systems, install the hardware, and configure local inference that
+              fits your models, your people, and your space.
             </p>
-            <div className="model-access-points">
+            <div className="hardware-home-points">
               <span>
                 <Icon name="check" />
-                Workload-led model selection
+                Sourcing & hardware sales
               </span>
               <span>
                 <Icon name="check" />
-                Volume-based enquiries
+                Onsite installation & configuration
               </span>
               <span>
                 <Icon name="check" />
-                Integration and usage planning
+                Local inference & ongoing support
               </span>
             </div>
-            <Link href="/services/frontier-model-access" className="button">
-              Explore model access
-              <Icon name="diagonal" />
+            <Link className="button" href="/hardware">
+              Explore AI hardware <Icon name="diagonal" />
             </Link>
-            <p className="fine-print">
-              Available models, regions, and commercial terms are confirmed
-              during quotation.
-            </p>
           </div>
-          <div className="model-stack">
-            <div className="model-stack-heading">
-              <Icon name="models" />
-              <span className="mono">MATCH THE MODEL TO THE WORK</span>
+          <div
+            className="hardware-illustration"
+            aria-label="NVIDIA hardware and private AI services"
+          >
+            <div className="hardware-illustration-top">
+              <span className="card-kicker">YOUR PRIVATE AI STACK</span>
+              <Icon name="server" />
             </div>
-            {[
-              {
-                title: "Reasoning",
-                text: "Complex analysis & multi-step problems",
-                icon: "agent",
-              },
-              {
-                title: "Coding",
-                text: "Development & engineering workflows",
-                icon: "code",
-              },
-              {
-                title: "Multimodal",
-                text: "Text, images & richer context",
-                icon: "environment",
-              },
-              {
-                title: "Embeddings",
-                text: "Retrieval, search & knowledge",
-                icon: "knowledge",
-              },
-            ].map((model, index) => (
-              <div className="model-stack-row" key={model.title}>
-                <span className="mono">0{index + 1}</span>
-                <Icon name={model.icon} />
-                <div>
-                  <strong>{model.title}</strong>
-                  <span>{model.text}</span>
+            <div className="rack-graphic" aria-hidden="true">
+              {["COMPUTE", "MODELS", "YOUR WORK"].map((label, index) => (
+                <div className="rack-unit" key={label}>
+                  <span className="rack-dots">
+                    <i />
+                    <i />
+                  </span>
+                  <span className="rack-grille">
+                    {Array.from({ length: 14 }, (_, i) => (
+                      <i key={i} />
+                    ))}
+                  </span>
+                  <span>{label}</span>
+                  <span className={`rack-light rack-light-${index}`} />
                 </div>
-                <Icon name="plus" />
-              </div>
-            ))}
-            <div className="model-stack-footer">
-              <span className="status-dot" />
-              Access by enquiry. Scoped to your business.
+              ))}
             </div>
+            <div className="hardware-family-list">
+              <span>H20 / H100 / H200</span>
+              <span>B200 / B300 / GB300</span>
+              <span>Vera & Rubin platforms</span>
+            </div>
+            <p>
+              From local workstations to enterprise systems.
+              <br />
+              Configuration and availability confirmed by quote.
+            </p>
+            <Link href="/services/gpu-hardware-services" className="text-link">
+              From sourcing to support <Icon name="arrow" />
+            </Link>
           </div>
         </div>
       </section>
-
+      <ProcessSection />
+      <section className="industry-section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Different teams. Shared possibility."
+            title="Made for how you work."
+            text="We start with your processes, people, and goals. Here are a few places the conversation can begin."
+          />
+          <div className="industry-grid">
+            {[
+              {
+                title: "Professional services",
+                text: "Meeting notes, project updates, document research, and client onboarding.",
+                icon: "board",
+                href: "/agents/project-manager-agent",
+              },
+              {
+                title: "Retail & customer teams",
+                text: "Product answers, order enquiries, CRM handoffs, and customer support.",
+                icon: "chat",
+                href: "/agents/support-agent",
+              },
+              {
+                title: "Finance & operations",
+                text: "Invoice preparation, supplier comparisons, approvals, and reconciliations.",
+                icon: "receipt",
+                href: "/agents/accounts-agent",
+              },
+              {
+                title: "Creative & product teams",
+                text: "Design briefs, video preparation, campaign drafts, and software delivery.",
+                icon: "palette",
+                href: "/services/creative-ai-workflows",
+              },
+            ].map((item) => (
+              <Link href={item.href} key={item.title}>
+                <Icon name={item.icon} />
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <span>
+                  Explore the possibilities <Icon name="arrow" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="section container" id="insights">
         <SectionHeading
-          eyebrow="A clearer perspective"
+          eyebrow="A little clarity goes a long way"
           title={
             <>
-              Make your next AI decision
+              Good questions.
               <br />
-              <span className="muted-heading">an informed one.</span>
+              <span className="muted-heading">Fresh perspectives.</span>
             </>
           }
         >
           <Link href="/insights" className="text-link">
-            Read our insights
-            <Icon name="arrow" />
+            All insights <Icon name="arrow" />
           </Link>
         </SectionHeading>
         <div className="insight-grid">
-          {insights.map((insight) => (
+          {insights.slice(0, 3).map((insight) => (
             <InsightCard key={insight.slug} insight={insight} />
           ))}
         </div>
       </section>
       <FaqSection faqs={homeFaqs} />
-      <ProjectCta />
+      <ProjectCta
+        title={
+          <>
+            Your next chapter?
+            <br />
+            Let’s make it a bright one.
+          </>
+        }
+        text="Bring us the repetitive task, the big idea, or the question you’re still figuring out. We’ll help you find a practical place to start."
+        label="Let’s talk possibilities"
+      />
     </>
   );
 }

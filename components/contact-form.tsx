@@ -7,9 +7,11 @@ import { Icon } from "./icon";
 export function ContactForm({
   interests,
   initialInterest = "Let’s explore the possibilities",
+  initialMessage = "",
 }: {
   interests: string[];
   initialInterest?: string;
+  initialMessage?: string;
 }) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
@@ -152,6 +154,7 @@ export function ContactForm({
           A little about your project <span aria-hidden="true">*</span>
           <textarea
             name="message"
+            defaultValue={initialMessage}
             placeholder="What would you like to build or improve? Tell us about your goals, current systems, and any timelines you have in mind."
             rows={5}
             required
