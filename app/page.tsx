@@ -17,7 +17,7 @@ import { homeFaqs } from "../lib/site";
 const paths = [
   {
     number: "01",
-    colour: "teal",
+    colour: "blue",
     icon: "workflow",
     label: "AI & AUTOMATION",
     title: "Make the everyday extraordinary.",

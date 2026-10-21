@@ -1,6 +1,6 @@
 # AIMS website
 
-The public website for A.I. Management Services: agentic AI transformation, business automation, custom agents, and hardware, based in Singapore. Built with Next.js App Router, React, TypeScript, and CSS. The warm white, teal, coral, and yellow visual system uses local assets and system fonts, with no external font or UI-library dependency.
+The public website for A.I. Management Services: agentic AI transformation, business automation, custom agents, and hardware, based in Singapore. Built with Next.js App Router, React, TypeScript, and CSS. The warm white visual system matches the logo's royal blue and azure, with cheerful coral, yellow, and lavender accents. It uses local assets and system fonts, with no external font or UI-library dependency.
 
 ## Development and checks
 
