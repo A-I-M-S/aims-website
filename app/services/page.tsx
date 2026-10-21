@@ -5,8 +5,8 @@ import { services } from "../../lib/services";
 import { pageMetadata, SITE_URL } from "../../lib/site";
 
 export const metadata = pageMetadata(
-  "AI Engineering & Infrastructure Services",
-  "Explore 10 connected AI services: automation, copilots, API and MCP integrations, RAG, agent harnesses, CI/CD, LLM gateways, private inference, and model access.",
+  "Agentic AI, Automation & Hardware Services Singapore",
+  "Explore AIMS services for agentic transformation, Make and n8n automation, Microsoft Copilot, custom agents, NVIDIA hardware, and private AI in Singapore.",
   "/services",
 );
 
@@ -40,7 +40,7 @@ export default function ServicesPage() {
         <Breadcrumbs items={[{ name: "Capabilities" }]} />
         <p className="eyebrow">
           <span />
-          10 capabilities. A connected whole.
+          {services.length} capabilities. A connected whole.
         </p>
         <h1>
           Everything between
@@ -48,9 +48,9 @@ export default function ServicesPage() {
           <span className="accent">an idea and impact.</span>
         </h1>
         <p className="page-lead">
-          Build the right capability for today, with an architecture that can
-          grow into tomorrow. Explore our AI engineering, automation, and
-          infrastructure services.
+          Start with a workflow, an AI teammate, or the infrastructure to run
+          your next idea. Explore practical automation, agentic transformation,
+          Microsoft AI, and hardware services built around your business.
         </p>
       </section>
       <section

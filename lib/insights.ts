@@ -18,6 +18,118 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "first-business-ai-agent",
+    category: "Agentic transformation",
+    title: "Your first AI agent starts with a useful job.",
+    description:
+      "A practical guide to choosing your first business AI agent, connecting the right tools, and keeping people in control of the workflow.",
+    readTime: "3 min read",
+    icon: "agent",
+    date: "2026-10-21",
+    takeaway:
+      "Choose a frequent, well-understood task with a clear owner. Give the agent the context and tools it needs, then evaluate the whole workflow with the people who use it.",
+    sections: [
+      {
+        id: "choose-a-useful-job",
+        title: "Start with the work your team knows well.",
+        paragraphs: [
+          "A first agent works best when the responsibility is concrete. Preparing an invoice for approval, drafting an onboarding checklist, or summarising a project update gives everyone a shared picture of the job. A broad instruction to run the business does not.",
+          "Map the current process with the person who owns it. Record the inputs, systems, decisions, exceptions, and final output. Some steps will suit ordinary automation; others may need a model to interpret a document or prepare a draft.",
+        ],
+        points: [
+          "Choose a task that happens often enough to learn from.",
+          "Identify the person responsible for the outcome.",
+          "Start with accessible, approved data and a bounded set of tools.",
+        ],
+      },
+      {
+        id: "connect-context-and-tools",
+        title: "Give the agent useful context and a defined toolkit.",
+        paragraphs: [
+          "An admin agent might need an authorised inbox, a calendar, and a CRM lookup. An HR agent might need current policy documents and a way to prepare an access request. Each integration should have a reason to exist and permissions that match that reason.",
+          "The platform follows those needs. Make, n8n, Zapier, or Power Automate can coordinate supported business processes. Copilot Studio can suit a Microsoft-based agent, while a custom framework can support more specialised state and tool orchestration. Confirm connectors, licences, and hosting requirements before choosing.",
+        ],
+      },
+      {
+        id: "design-human-review",
+        title: "Make review a useful part of the workflow.",
+        paragraphs: [
+          "A review step should show the proposed action, the evidence behind it, and anything uncertain. For an accounts agent, that might mean the draft entry, the source invoice, and a highlighted purchase-order mismatch. The reviewer should not need to reconstruct the whole task.",
+          "Define which actions need approval and what happens when a system is unavailable or a request falls outside scope. Payments, employment decisions, external commitments, and production changes need appropriate human ownership and application-level controls.",
+        ],
+      },
+      {
+        id: "pilot-and-learn",
+        title: "Run a small pilot and improve the whole process.",
+        paragraphs: [
+          "Test ordinary cases and meaningful exceptions before using the agent in a live workflow. Compare draft quality, time spent reviewing, completion rates, and operating cost with the current process. Include missing information, duplicates, and failed integrations in the evaluation.",
+          "A useful pilot ends with an operating plan: who maintains the sources, who handles failures, who can change permissions, and how feedback reaches the implementation team. Expand the agent’s responsibility when the evidence and the people operating it support that next step.",
+        ],
+      },
+    ],
+    relatedServices: [
+      "ai-transformation-strategy",
+      "agent-harness-engineering",
+      "workflow-automation",
+    ],
+  },
+  {
+    slug: "local-ai-hardware-planning",
+    category: "Hardware & private AI",
+    title: "Planning local AI? Size the workload before the GPU.",
+    description:
+      "What to consider before buying AI hardware: model memory, concurrent users, site readiness, inference software, and the cost of operating a local system.",
+    readTime: "3 min read",
+    icon: "server",
+    date: "2026-10-21",
+    takeaway:
+      "Choose hardware around the model and the service you need to deliver. Include runtime memory, concurrency, power, cooling, software, and support in the plan.",
+    sections: [
+      {
+        id: "define-the-workload",
+        title: "Write down what the system needs to do.",
+        paragraphs: [
+          "A single-user knowledge assistant and a service answering many simultaneous requests have different requirements. Start with the intended models, expected users, input lengths, output lengths, and acceptable response times. Include any image, audio, embedding, or reranking workloads.",
+          "Model weights are only part of the memory budget. Runtime overhead and attention-cache memory also matter, especially as context length and concurrent requests grow. Quantisation can change memory needs and output quality, so evaluate the actual serving configuration rather than a model name alone.",
+        ],
+      },
+      {
+        id: "match-the-system",
+        title: "Buy a compatible system, with a clear specification.",
+        paragraphs: [
+          "The accelerator, server, interconnects, storage, and network need to work together. Form factor and cooling requirements can rule out a simple card upgrade. Larger platforms may need substantial changes to racks, power distribution, and facility cooling.",
+          "Ask the supplier to confirm the exact bill of materials, condition, warranty, support boundary, destination eligibility, and lead time. A product-family name is not a full specification, and an indicative catalogue listing is not a stock allocation.",
+        ],
+        points: [
+          "Confirm the exact accelerator and supported server platform.",
+          "Check power, cooling, space, and network readiness.",
+          "Agree who installs, commissions, and supports each part.",
+        ],
+      },
+      {
+        id: "plan-local-inference",
+        title: "Plan the software and data flows as carefully as the hardware.",
+        paragraphs: [
+          "A local inference deployment can include supported GPU drivers, CUDA, containers, an inference engine, authentication, model storage, and monitoring. Tools such as vLLM, Ollama, or NVIDIA NIM serve different operational needs and have their own compatibility and licence requirements.",
+          "Local model serving does not automatically keep every data flow onsite. Review retrieval sources, tool calls, telemetry, backups, and any connected cloud services. Document the data paths and test the access controls that protect the application.",
+        ],
+      },
+      {
+        id: "validate-operations",
+        title: "Validate the workload and prepare the handover.",
+        paragraphs: [
+          "Use representative requests to check latency, throughput, memory headroom, and output quality. Include the expected concurrency and context lengths, then agree what a passing result looks like. Avoid treating vendor benchmark figures as a promise for a different workload.",
+          "Account for electricity, hosting space, support, maintenance, model updates, and staff time alongside the hardware price. A clear operating owner, recovery procedure, and capacity plan help turn a hardware purchase into a service the business can depend on.",
+        ],
+      },
+    ],
+    relatedServices: [
+      "gpu-hardware-services",
+      "private-ai-inference",
+      "llm-gateway-caching",
+    ],
+  },
+  {
     slug: "rag-vs-fine-tuning",
     category: "Knowledge & models",
     title: "RAG or fine-tuning? Start with the problem.",

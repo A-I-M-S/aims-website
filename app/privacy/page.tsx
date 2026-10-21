@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           This notice explains how information is handled when you use this
           website or send AIMS an enquiry.
         </p>
-        <p className="mono">Updated 29 September 2026</p>
+        <p className="mono">Updated 21 October 2026</p>
       </section>
       <div className="container legal-copy">
         <section>
@@ -48,11 +48,14 @@ export default function PrivacyPage() {
         <section>
           <h2>Website analytics</h2>
           <p>
-            This website uses Google Analytics to understand website usage,
-            including page views and technical information about browsers and
-            devices. Google Analytics may use cookies and similar technologies.
+            This website uses Google Analytics and Vercel Web Analytics to
+            understand website usage, including page views and technical
+            information about browsers and devices. Google Analytics may use
+            cookies and similar technologies. Vercel Web Analytics provides
+            aggregate visitor and page-view reporting without analytics cookies.
             Contact form field values are not included in analytics events
-            implemented by this website.
+            implemented by this website. We remove query strings and fragments
+            from page URLs sent to Vercel Web Analytics.
           </p>
           <p>
             You can manage cookies and tracking through your browser settings
@@ -64,6 +67,17 @@ export default function PrivacyPage() {
               rel="noopener noreferrer"
             >
               privacy policy (opens in a new tab)
+            </a>
+            .
+          </p>
+          <p>
+            Vercel explains its analytics data handling in its{" "}
+            <a
+              href="https://vercel.com/docs/analytics/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Web Analytics privacy documentation (opens in a new tab)
             </a>
             .
           </p>

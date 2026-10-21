@@ -9,8 +9,8 @@ import { Icon } from "../../components/icon";
 import { founders, pageMetadata } from "../../lib/site";
 
 export const metadata = pageMetadata(
-  "About AIMS — AI Engineering in Singapore",
-  "Meet AIMS, a Singapore-based AI engineering and infrastructure partner. We connect business understanding with practical automation, agents, and AI systems.",
+  "About AIMS — Agentic AI Transformation in Singapore",
+  "Meet AIMS, a Singapore-based partner for agentic transformation, workflow automation, custom AI agents, NVIDIA hardware, and local inference.",
   "/about",
 );
 
@@ -30,8 +30,8 @@ export default function AboutPage() {
         </h1>
         <p className="page-lead">
           We believe the value of AI shows up in the work it helps people do.
-          AIMS brings business understanding and technical implementation
-          together to make that value tangible.
+          AIMS brings business understanding, practical automation, and AI
+          infrastructure together to give people more room for useful work.
         </p>
       </section>
       <section className="section container about-story" id="about">
@@ -59,8 +59,10 @@ export default function AboutPage() {
             AIMS was founded by three entrepreneurs from different business
             backgrounds with a shared belief: AI should be practical,
             accessible, and manageable. Our work connects that belief to
-            implementation, from the first automated workflow to the
-            infrastructure that supports a growing AI system.
+            implementation, from the first automated workflow and a helpful
+            agent to the hardware that supports a growing AI system. We help
+            teams adopt the tools, understand the review points, and build the
+            confidence to keep improving.
           </p>
           <p>
             Based in Singapore, we work with business leaders, founders, and

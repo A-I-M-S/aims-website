@@ -6,11 +6,12 @@ import { useEffect, useRef, useState } from "react";
 import { Icon } from "./icon";
 
 const navigation = [
-  { label: "Capabilities", href: "/services" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Our approach", href: "/#approach" },
+  { label: "AI services", href: "/services" },
+  { label: "AI agents", href: "/agents" },
+  { label: "Hardware", href: "/hardware" },
+  { label: "Platforms", href: "/platforms" },
   { label: "Insights", href: "/insights" },
-  { label: "Company", href: "/about" },
+  { label: "About", href: "/about" },
 ];
 
 export function SiteHeader() {
@@ -52,7 +53,12 @@ export function SiteHeader() {
           aria-label="AIMS home"
           onClick={() => setOpen(false)}
         >
-          <img src="/aims-logo-white.png" alt="AIMS" width="137" height="38" />
+          <img
+            src="/aims-logo-transparent.png"
+            alt="AIMS — A.I. Management Services"
+            width="137"
+            height="39"
+          />
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map(({ href, label }) => (
@@ -105,7 +111,7 @@ export function SiteHeader() {
           </Link>
         ))}
         <Link href="/contact" onClick={() => setOpen(false)}>
-          <span className="mono">06</span>Discuss your project
+          <span className="mono">07</span>Discuss your project
           <Icon name="diagonal" />
         </Link>
       </nav>

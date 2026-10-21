@@ -1,6 +1,59 @@
 import type { CSSProperties, ReactNode } from "react";
 
 const paths: Record<string, ReactNode> = {
+  sparkles: (
+    <>
+      <path d="m12 2 2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5L12 2ZM20 2v4m-2-2h4M4 18v4m-2-2h4" />
+    </>
+  ),
+  calendar: (
+    <>
+      <rect x="3" y="5" width="18" height="16" rx="3" />
+      <path d="M7 2v6m10-6v6M3 11h18m-13 4h2m4 0h2m-8 3h2" />
+    </>
+  ),
+  people: (
+    <>
+      <circle cx="9" cy="7" r="3" />
+      <path d="M2 21v-3a7 7 0 0 1 14 0v3M16 4a3 3 0 0 1 0 6m2 4a6 6 0 0 1 4 6" />
+    </>
+  ),
+  receipt: (
+    <>
+      <path d="M5 2h14v20l-3-2-4 2-4-2-3 2V2Zm4 5h6m-6 4h6m-6 4h3" />
+    </>
+  ),
+  board: (
+    <>
+      <rect x="2" y="3" width="20" height="18" rx="3" />
+      <path d="M8 3v18m8-18v18M5 7v4m6-4v7m8-7v3" />
+    </>
+  ),
+  palette: (
+    <>
+      <path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1-3.7 1.4 1.4 0 0 1 .8-2.5H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3Z" />
+      <circle cx="7" cy="10" r=".8" />
+      <circle cx="11" cy="7" r=".8" />
+      <circle cx="16" cy="9" r=".8" />
+      <circle cx="7" cy="15" r=".8" />
+    </>
+  ),
+  video: (
+    <>
+      <rect x="2" y="5" width="14" height="14" rx="3" />
+      <path d="m16 10 6-4v12l-6-4m-8-5 4 3-4 3V9Z" />
+    </>
+  ),
+  growth: (
+    <>
+      <path d="M3 3v18h18M7 15l5-5 4 3 5-8m-6 0h6v6" />
+    </>
+  ),
+  package: (
+    <>
+      <path d="m12 2 9 5v10l-9 5-9-5V7l9-5ZM3 7l9 5 9-5M12 12v10M8 4l9 5v4" />
+    </>
+  ),
   arrow: (
     <>
       <path d="M4 12h15M13 5l7 7-7 7" />

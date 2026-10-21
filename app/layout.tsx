@@ -3,13 +3,15 @@ import Script from "next/script";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
 import { JsonLd } from "../components/json-ld";
+import { SiteAnalytics } from "../components/site-analytics";
 import { SITE_URL, SITE_NAME, CONTACT_EMAIL, founders } from "../lib/site";
 import { services } from "../lib/services";
 import "./globals.css";
+import "./transformation.css";
 
-const title = "AI Engineering, Automation & Infrastructure | AIMS Singapore";
+const title = "Agentic AI, Automation & GPU Hardware | AIMS Singapore";
 const description =
-  "AIMS builds AI agents, workflow automation, copilots, API and MCP integrations, RAG, and AI infrastructure. Based in Singapore. Built around your business.";
+  "Put AI to work with AIMS Singapore. Custom AI agents, Make and n8n automation, Microsoft Copilot, NVIDIA GPU sourcing, and local inference installation.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
         url: "/social-card.png",
         width: 1200,
         height: 630,
-        alt: "AIMS. Intelligence, engineered for impact.",
+        alt: "AIMS. Put AI to work. Make room for what’s next.",
       },
     ],
   },
@@ -108,10 +110,14 @@ export default function RootLayout({
                   "Model Context Protocol",
                   "Retrieval-augmented generation",
                   "LLM infrastructure",
+                  "Agentic AI transformation",
+                  "Microsoft Copilot and Copilot Studio",
+                  "NVIDIA GPU sourcing and installation",
+                  "Local AI inference",
                 ],
                 hasOfferCatalog: {
                   "@type": "OfferCatalog",
-                  name: "AI Engineering & Infrastructure Services",
+                  name: "Agentic AI, Automation & Hardware Services",
                   itemListElement: services.map((service) => ({
                     "@type": "Offer",
                     itemOffered: {
@@ -143,6 +149,7 @@ export default function RootLayout({
           id="google-analytics"
           strategy="afterInteractive"
         >{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-WK45QC02XS');`}</Script>
+        <SiteAnalytics />
       </body>
     </html>
   );

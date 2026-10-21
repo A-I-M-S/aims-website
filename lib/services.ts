@@ -48,7 +48,18 @@ export const services: Service[] = [
     headline: "Give your people their time back.",
     introduction:
       "The best automation starts with understanding the work. We map how information moves through your business, remove avoidable steps, and build workflows that combine deterministic rules with AI where judgement or unstructured data is involved.",
-    tags: ["Process mapping", "System integration", "Human approvals"],
+    tags: ["Make & n8n", "Zapier & Power Automate", "Human approvals"],
+    searchTerms: [
+      "Make",
+      "n8n",
+      "Zapier",
+      "Power Automate",
+      "UiPath",
+      "CRM",
+      "invoice",
+      "HR",
+      "accounts",
+    ],
     deliverables: [
       {
         title: "Process discovery & prioritisation",
@@ -56,7 +67,7 @@ export const services: Service[] = [
       },
       {
         title: "Connected workflows",
-        text: "Connect your CRM, finance tools, documents, and internal applications through APIs, webhooks, and event-driven workflows.",
+        text: "Build with Make, n8n, Zapier, Power Automate, or UiPath where appropriate. Connect CRM, finance, documents, and internal applications through supported APIs, connectors, and webhooks.",
       },
       {
         title: "AI document & decision support",
@@ -116,7 +127,18 @@ export const services: Service[] = [
     headline: "An assistant that can move work forward.",
     introduction:
       "A useful copilot needs more than a chat window. We connect conversational interfaces to your knowledge and approved tools, so people can get grounded answers, check information, and complete tasks without jumping between applications.",
-    tags: ["Conversational AI", "API & MCP tools", "Grounded answers"],
+    tags: ["Copilot Studio & Dify", "API & MCP tools", "Grounded answers"],
+    searchTerms: [
+      "Copilot Studio",
+      "Dify",
+      "Flowise",
+      "admin",
+      "HR",
+      "sales",
+      "support",
+      "research",
+      "sample agents",
+    ],
     deliverables: [
       {
         title: "Conversation & experience design",
@@ -627,7 +649,16 @@ export const services: Service[] = [
     introduction:
       "Some workloads need greater control over where data goes and how models run. We assess the model, hardware, and operating requirements together, then build local, private-cloud, or hybrid inference with the monitoring your team needs to operate it.",
     tags: ["Local & private cloud", "Model serving", "Inference observability"],
-    searchTerms: ["on-premise", "GPU", "self-hosted", "monitoring"],
+    searchTerms: [
+      "on-premise",
+      "GPU",
+      "self-hosted",
+      "monitoring",
+      "vLLM",
+      "Ollama",
+      "NVIDIA NIM",
+      "local inference",
+    ],
     deliverables: [
       {
         title: "Model & hardware assessment",
@@ -756,6 +787,417 @@ export const services: Service[] = [
       "llm-gateway-caching",
       "private-ai-inference",
       "rag-model-fine-tuning",
+    ],
+  },
+  {
+    number: "11",
+    slug: "ai-transformation-strategy",
+    title: "Agentic AI Transformation & Adoption",
+    shortTitle: "AI strategy & adoption",
+    category: "AI engineering",
+    icon: "agent",
+    summary:
+      "Find a useful first AI project, build a practical roadmap, and bring your people along.",
+    description:
+      "Agentic AI transformation consulting in Singapore. AIMS maps workflows, prioritises AI opportunities, plans pilots, and supports staff training and adoption.",
+    headline: "Your next chapter starts with the right first step.",
+    introduction:
+      "Agentic transformation connects people, processes, and systems so AI can move work forward with clear responsibilities. We begin with the work your team does today, identify useful opportunities, and turn them into a scoped pilot and a practical adoption plan.",
+    tags: ["AI readiness", "Pilot roadmap", "Staff training"],
+    searchTerms: [
+      "consulting",
+      "assessment",
+      "SME",
+      "enterprise",
+      "change management",
+      "agentic transformation",
+    ],
+    deliverables: [
+      {
+        title: "Workflow & readiness assessment",
+        text: "Map repetitive work, data access, system constraints, and the people who own each process.",
+      },
+      {
+        title: "Prioritised opportunity map",
+        text: "Compare candidate use cases by value, feasibility, operating cost, and review requirements.",
+      },
+      {
+        title: "Pilot scope & success measures",
+        text: "Choose a first workflow, agree acceptance criteria, and define the tools, permissions, and human handoffs.",
+      },
+      {
+        title: "Training & adoption plan",
+        text: "Run role-based workshops and prepare guidance, ownership, and feedback routes for the teams using the system.",
+      },
+    ],
+    example: {
+      title: "From a long AI wish list to one useful pilot.",
+      text: "An illustrative SME assessment identifies invoice handling as a frequent bottleneck. The team starts with extraction and approval preparation, then reviews the evidence before expanding automation.",
+      steps: [
+        "Map the current work",
+        "Rank the opportunities",
+        "Agree a focused pilot",
+        "Train, measure & iterate",
+      ],
+    },
+    measures: [
+      "Clear process and data ownership",
+      "Pilot acceptance against agreed criteria",
+      "Team adoption and feedback",
+      "Time and cost per completed workflow",
+    ],
+    faqs: [
+      {
+        question: "Do we need an AI strategy before starting?",
+        answer:
+          "You need a clear problem, an owner, and a way to judge success. We can start with a focused assessment and grow the roadmap as your team learns.",
+      },
+      {
+        question: "Can you train non-technical teams?",
+        answer:
+          "Yes. Training is scoped around each role’s tasks, supported tools, review responsibilities, and practical examples from the agreed implementation.",
+      },
+      {
+        question: "Will every process become autonomous?",
+        answer:
+          "No. We choose ordinary automation, AI assistance, or an agent according to the task. People retain responsibility for consequential decisions and exceptions.",
+      },
+    ],
+    related: [
+      "workflow-automation",
+      "microsoft-copilot",
+      "agent-harness-engineering",
+    ],
+  },
+  {
+    number: "12",
+    slug: "microsoft-copilot",
+    title: "Microsoft Copilot, Copilot Studio & Power Automate",
+    shortTitle: "Microsoft Copilot & automation",
+    category: "Automation",
+    icon: "chat",
+    summary:
+      "Make Microsoft AI useful across your everyday work, company knowledge, and business processes.",
+    description:
+      "Microsoft 365 Copilot adoption, Copilot Studio agents, and Power Automate workflows in Singapore. AIMS connects Teams, SharePoint, and your business systems.",
+    headline: "Bring intelligence into the tools your team knows.",
+    introduction:
+      "We help teams adopt Microsoft 365 Copilot, build custom agents in Copilot Studio, and connect approved actions through Power Automate. The implementation starts with your tenant, licences, data permissions, and the work you want to improve.",
+    tags: ["Microsoft 365 Copilot", "Copilot Studio", "Power Automate"],
+    searchTerms: [
+      "Teams",
+      "SharePoint",
+      "Outlook",
+      "HR",
+      "approvals",
+      "Microsoft",
+    ],
+    deliverables: [
+      {
+        title: "Readiness & licence review",
+        text: "Review the relevant Microsoft services, access model, available connectors, and licensing prerequisites.",
+      },
+      {
+        title: "Knowledge-connected agents",
+        text: "Build scoped Copilot Studio experiences with approved sources, useful answers, and a clear escalation route.",
+      },
+      {
+        title: "Business workflow integration",
+        text: "Connect supported actions and approvals across Teams, SharePoint, Outlook, and the business systems in scope.",
+      },
+      {
+        title: "Adoption & operating guidance",
+        text: "Prepare role-based examples, training, evaluation scenarios, and ownership for ongoing updates.",
+      },
+    ],
+    example: {
+      title: "A helpful HR assistant, right inside Teams.",
+      text: "An illustrative Copilot Studio agent retrieves current policy guidance from approved SharePoint content and prepares onboarding requests through Power Automate for HR and IT approval.",
+      steps: [
+        "Ask in Teams",
+        "Find approved policy",
+        "Prepare a request",
+        "Route for human approval",
+      ],
+    },
+    measures: [
+      "Grounded answer quality",
+      "Correct permissions and escalations",
+      "Workflow completion",
+      "Staff adoption and feedback",
+    ],
+    faqs: [
+      {
+        question: "Is Microsoft 365 Copilot the same as Copilot Studio?",
+        answer:
+          "Microsoft 365 Copilot supports productivity in eligible Microsoft 365 experiences. Copilot Studio is used to create and manage custom agents. We help choose the right combination for your use case.",
+      },
+      {
+        question: "Are Microsoft licences included?",
+        answer:
+          "Licences, capacity, premium connectors, and implementation are confirmed separately in the scope and quotation. We review your existing entitlement before recommending changes.",
+      },
+      {
+        question: "Can an agent use confidential documents?",
+        answer:
+          "Only within an agreed access design. We review source permissions, identities, connector behaviour, and representative access scenarios before deployment.",
+      },
+    ],
+    related: [
+      "ai-copilots",
+      "workflow-automation",
+      "ai-transformation-strategy",
+    ],
+  },
+  {
+    number: "13",
+    slug: "gpu-hardware-services",
+    title: "GPU Hardware Sourcing, Installation & Local AI",
+    shortTitle: "GPU hardware & installation",
+    category: "Infrastructure",
+    icon: "server",
+    summary:
+      "Source the right NVIDIA hardware and turn it into a working local inference environment.",
+    description:
+      "NVIDIA GPU sourcing and sales, server installation, and local AI inference configuration in Singapore. AIMS scopes hardware, deployment, monitoring, and support.",
+    headline: "From the right hardware to AI that runs.",
+    introduction:
+      "A useful private AI deployment needs more than a GPU. We connect hardware sizing and sourcing to site readiness, installation, serving software, access controls, and operational handover. Hardware sales and services are quoted against a confirmed configuration and supplier availability.",
+    tags: ["NVIDIA sourcing", "Onsite installation", "Local inference"],
+    searchTerms: [
+      "H20",
+      "H20e",
+      "H100",
+      "H200",
+      "B200",
+      "B300",
+      "GB300",
+      "Vera",
+      "Rubin",
+      "GPU sales",
+      "vLLM",
+      "Ollama",
+      "NIM",
+    ],
+    deliverables: [
+      {
+        title: "Workload sizing & sourcing",
+        text: "Assess model size, context, concurrency, and budget. Confirm the exact hardware configuration, supplier terms, and delivery prerequisites.",
+      },
+      {
+        title: "Installation & site readiness",
+        text: "Scope workstation or server installation, networking, storage, rack space, power, and cooling requirements.",
+      },
+      {
+        title: "Local inference configuration",
+        text: "Configure supported drivers, CUDA, containers, and a suitable engine such as vLLM, Ollama, or NVIDIA NIM. Review model licences and access controls.",
+      },
+      {
+        title: "Commissioning & support",
+        text: "Validate representative workloads, document the operating limits, and hand over monitoring, update, and recovery procedures.",
+      },
+    ],
+    example: {
+      title: "A private knowledge assistant on your own hardware.",
+      text: "An illustrative deployment sizes a local system for an internal model and retrieval workload, installs the agreed hardware, and connects an authenticated inference service to the business application.",
+      steps: [
+        "Size & source",
+        "Prepare & install",
+        "Configure inference",
+        "Validate & hand over",
+      ],
+    },
+    measures: [
+      "Performance on the agreed workload",
+      "GPU memory and capacity headroom",
+      "Access control and recovery checks",
+      "Operating cost and support readiness",
+    ],
+    faqs: [
+      {
+        question: "Can we buy NVIDIA GPUs through AIMS?",
+        answer:
+          "We handle sourcing and sales enquiries for NVIDIA GPU and system configurations. The exact part number, condition, warranty, availability, destination eligibility, and delivery terms are confirmed in a quotation.",
+      },
+      {
+        question: "Do you install and configure hardware at our site?",
+        answer:
+          "Onsite installation and local inference configuration can be included in the scope. We confirm location, site readiness, access, power, cooling, and the work required before scheduling.",
+      },
+      {
+        question: "Do you supply Vera and Rubin?",
+        answer:
+          "We accept Vera CPU and Rubin platform enquiries and confirm eligible supplier offerings and delivery windows before quoting. A catalogue entry does not imply current stock or a confirmed allocation.",
+      },
+    ],
+    related: [
+      "private-ai-inference",
+      "llm-gateway-caching",
+      "data-cloud-foundations",
+    ],
+  },
+  {
+    number: "14",
+    slug: "creative-ai-workflows",
+    title: "AI Design, Video & Content Workflows",
+    shortTitle: "Creative & content AI",
+    category: "Automation",
+    icon: "environment",
+    summary:
+      "Give designers, marketers, and video teams more time for the creative work that matters.",
+    description:
+      "AI-assisted design, video, and marketing workflows in Singapore. AIMS connects briefs, creative tools, draft assets, captions, approvals, and content operations.",
+    headline: "More creative possibility. A clearer process.",
+    introduction:
+      "We build workflows that support creative people from brief to reviewed output. Connect approved brand guidance, asset libraries, supported creative tools, and a visible review process. Each integration is scoped to the capabilities available in your licences and tools.",
+    tags: ["Designer agents", "Video workflows", "Brand review"],
+    searchTerms: [
+      "videographer",
+      "designer",
+      "marketing",
+      "Figma",
+      "Canva",
+      "Adobe Firefly",
+      "Premiere Pro",
+      "Runway",
+      "DaVinci Resolve",
+    ],
+    deliverables: [
+      {
+        title: "Brief & asset organisation",
+        text: "Collect requirements, references, formats, and approved brand material into a consistent starting point.",
+      },
+      {
+        title: "Creative drafting workflows",
+        text: "Prepare concepts, copy, storyboard directions, and asset variations using supported tools and agreed source material.",
+      },
+      {
+        title: "Video preparation & repurposing",
+        text: "Connect transcription, caption drafts, time-coded edit notes, and channel-specific version planning.",
+      },
+      {
+        title: "Review & delivery",
+        text: "Route drafts to designers or editors and organise approved outputs with their usage and version information.",
+      },
+    ],
+    example: {
+      title: "One approved story. Several useful formats.",
+      text: "An illustrative campaign workflow turns an approved interview into a transcript, short-form edit suggestions, caption drafts, and social copy for the creative team to review.",
+      steps: [
+        "Collect approved material",
+        "Prepare creative drafts",
+        "Review & refine",
+        "Package approved versions",
+      ],
+    },
+    measures: [
+      "Time to first reviewed draft",
+      "Revision effort",
+      "Brand and caption correction rates",
+      "Completeness of the asset handover",
+    ],
+    faqs: [
+      {
+        question: "Does an AI videographer replace filming or editing?",
+        answer:
+          "The agent supports planning, footage organisation, transcription, edit notes, and version preparation. Filming and final creative decisions remain with your production team.",
+      },
+      {
+        question: "Can you connect our current creative tools?",
+        answer:
+          "We check the APIs, automation features, file formats, and licences your tools support. Where a direct integration is unavailable, we scope a clear file-based or human handoff.",
+      },
+      {
+        question: "Who checks rights and final output?",
+        answer:
+          "Your designated creative owner reviews brand consistency, claims, source rights, likeness permissions, accessibility, and the final material before publication.",
+      },
+    ],
+    related: [
+      "workflow-automation",
+      "ai-copilots",
+      "ai-transformation-strategy",
+    ],
+  },
+  {
+    number: "15",
+    slug: "data-cloud-foundations",
+    title: "Data Integration, Cloud & AI Foundations",
+    shortTitle: "Data & cloud foundations",
+    category: "Infrastructure",
+    icon: "connect",
+    summary:
+      "Give your agents reliable data and an infrastructure foundation that fits your business.",
+    description:
+      "Data integration and cloud AI foundations in Singapore. AIMS connects business data, analytics, access controls, and cloud or hybrid infrastructure for AI workloads.",
+    headline: "Useful AI starts with connected foundations.",
+    introduction:
+      "Agents depend on the quality and accessibility of the systems behind them. We connect business data, plan cloud or hybrid deployment, and establish the access, monitoring, and ownership needed to operate an AI application.",
+    tags: ["Data integration", "Cloud & hybrid", "Operational visibility"],
+    searchTerms: [
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "analytics",
+      "Power BI",
+      "data pipelines",
+      "data engineering",
+    ],
+    deliverables: [
+      {
+        title: "Data & integration assessment",
+        text: "Map source systems, data quality, update frequency, access rights, and the context each AI workflow needs.",
+      },
+      {
+        title: "Pipelines & knowledge preparation",
+        text: "Build scoped ingestion, transformation, and retrieval preparation with clear ownership and failure handling.",
+      },
+      {
+        title: "Cloud & hybrid architecture",
+        text: "Select suitable services in your AWS, Azure, Google Cloud, or private environment, based on workload and operational requirements.",
+      },
+      {
+        title: "Analytics & operating visibility",
+        text: "Connect agreed business and service measures to reporting, monitoring, budgets, and an operational handover.",
+      },
+    ],
+    example: {
+      title: "Connect scattered records to a useful operations view.",
+      text: "An illustrative project combines approved CRM and operations data into a maintained reporting view that also supplies context to an internal assistant.",
+      steps: [
+        "Map sources & access",
+        "Prepare reliable data",
+        "Connect reporting & AI",
+        "Monitor freshness & failures",
+      ],
+    },
+    measures: [
+      "Data freshness and quality",
+      "Integration completion and error rates",
+      "Access-policy checks",
+      "Visibility of operating cost",
+    ],
+    faqs: [
+      {
+        question: "Must we move everything to the cloud?",
+        answer:
+          "No. We work with cloud, private, and hybrid architectures according to your data requirements, existing systems, and operating capacity.",
+      },
+      {
+        question: "Can this include business reporting?",
+        answer:
+          "Yes. Reporting can be scoped around agreed data sources and measures, including tools such as Power BI where suitable.",
+      },
+      {
+        question: "Do you provide ongoing management?",
+        answer:
+          "Monitoring, maintenance, and ongoing support can be scoped with clear ownership, coverage, and response arrangements in the service agreement.",
+      },
+    ],
+    related: [
+      "api-mcp-integration",
+      "rag-model-fine-tuning",
+      "private-ai-inference",
     ],
   },
 ];

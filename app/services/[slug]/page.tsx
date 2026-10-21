@@ -90,6 +90,23 @@ export default async function ServicePage({ params }: Props) {
               <span key={tag}>{tag}</span>
             ))}
           </div>
+          <div className="discovery-links">
+            <Link
+              className="text-link"
+              href={
+                service.category === "Infrastructure" ? "/hardware" : "/agents"
+              }
+            >
+              {service.category === "Infrastructure"
+                ? "Explore AI hardware"
+                : "Meet our sample agents"}
+              <Icon name="arrow" />
+            </Link>
+            <Link className="text-link" href="/platforms">
+              Explore tools & platforms
+              <Icon name="arrow" />
+            </Link>
+          </div>
         </div>
       </section>
       <section className="section deliverables-section" id="what-we-build">
